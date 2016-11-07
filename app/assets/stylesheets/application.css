@@ -28,7 +28,8 @@ body {
 header {
     background: #333;
     color: #fff;
-    height: 80px;
+    height: 120px;
+    padding-top: 20px;
     margin-bottom: 20px;
 }
 
