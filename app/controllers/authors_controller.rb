@@ -10,6 +10,16 @@ class AuthorsController < ApplicationController
     @author = Author.new
   end
 
+  def create
+    @author = Author.new(author_params)
+    if @author.save
+      flash[:notice] = "Author added successfully"
+      redirect_to authors_path
+    else
+      render 'new'
+    end
+  end
+
   def edit
   end
 
