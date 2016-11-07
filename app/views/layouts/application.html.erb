@@ -38,7 +38,6 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">New <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -46,6 +45,15 @@
             <li class="<%= params[:controller] == 'categories' ? 'active' : '' %>"><%= link_to('Category', new_category_path) %></li>
             <li class="<%= params[:controller] == 'authors' ? 'active' : '' %>"><%= link_to('Author', new_author_path) %></li>
             <li class="<%= params[:controller] == 'publishers' ? 'active' : '' %>"><%= link_to('Publisher', new_publisher_path) %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="<%= params[:controller] == 'books' ? 'active' : '' %>"><%= link_to('Books', books_path) %></li>
+            <li class="<%= params[:controller] == 'categories' ? 'active' : '' %>"><%= link_to('Categories', categories_path) %></li>
+            <li class="<%= params[:controller] == 'authors' ? 'active' : '' %>"><%= link_to('Authors', authors_path) %></li>
+            <li class="<%= params[:controller] == 'publishers' ? 'active' : '' %>"><%= link_to('Publishers', publishers_path) %></li>
           </ul>
         </li>
       </ul>

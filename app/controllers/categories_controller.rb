@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   def index
+    @page_title = 'Manage Categories'
     @categories = Category.all
   end
 
@@ -25,9 +26,25 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update_attributes(category_params)
+      flash[:notice] = 'Category updated successfully'
+      redirect_to categories_path
+    else
+      render 'edit'
+    end
   end
 
   def delete
+    @category = Category.find(params[:id])
+  end
+
+  def destroy
+
   end
 
   private
