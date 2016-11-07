@@ -1,5 +1,6 @@
 class PublishersController < ApplicationController
   def index
+    @publishers = Publisher.all
   end
 
   def show
@@ -21,6 +22,17 @@ class PublishersController < ApplicationController
   end
 
   def edit
+    @publisher = Publisher.find(params[:id])
+  end
+
+  def update
+    @publisher = Publisher.find(params[:id])
+    if @publisher.update_attributes(publisher_params)
+      flash[:notice] = 'Publisher updated successfully.'
+      redirect_to publishers_path
+    else
+      render 'edit'
+    end
   end
 
   def delete
