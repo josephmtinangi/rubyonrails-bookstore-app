@@ -7,7 +7,17 @@ class CategoriesController < ApplicationController
 
   def new
     @page_title = 'Add new Category'
-    @category = Category.new    
+    @category = Category.new
+  end
+
+  def create
+    @category = Category.new(category_params)
+    if @category.save
+      flash[:notice] = "Category added successfully."
+      redirect_to categories_path
+    else
+      render 'new'
+    end
   end
 
   def edit
