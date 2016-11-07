@@ -1,2 +1,15 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<h2>Add a new book</h2>
+
+<%= form_for(@book, class: 'form-horizontal') do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-group">
+      <div class="col-sm-5">
+        <%= f.submit "Update", class: "btn btn-primary btn-block" %>
+      </div>
+      <div class="col-sm-5">
+        <%= link_to "Cancel", books_path, class: "btn btn-default" %>
+      </div>
+    </div>
+<% end %>
