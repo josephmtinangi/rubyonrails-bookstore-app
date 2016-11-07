@@ -66,15 +66,17 @@
           <%= yield %>
         </div>
         <div class="col-md-4">
-          <div class="well">
-            <ul class="list-group">
-              <li class="list-group-item">One</li>
-            </ul>
-          </div>
+          <%= render 'partials/sidebar' %>
         </div>
       </div>
     </div>
   </section>
+
+  <footer>
+    <div class="container">
+      <p>Copyright &copy;2016 All Rights Reserved</p>
+    </div>
+  </footer>
 
   </body>
 </html>
