@@ -1,43 +1,27 @@
 Rails.application.routes.draw do
-  get 'publishers/index'
+  resources :publishers do
+    member do
+      get 'delete'
+    end
+  end
 
-  get 'publishers/show'
+  resources :authors do
+    member do
+      get 'delete'
+    end
+  end
 
-  get 'publishers/new'
+  resources :categories do
+    member do
+      get 'delete'
+    end
+  end
 
-  get 'publishers/edit'
-
-  get 'publishers/delete'
-
-  get 'authors/index'
-
-  get 'authors/show'
-
-  get 'authors/new'
-
-  get 'authors/edit'
-
-  get 'authors/delete'
-
-  get 'categories/index'
-
-  get 'categories/show'
-
-  get 'categories/new'
-
-  get 'categories/edit'
-
-  get 'categories/delete'
-
-  get 'books/index'
-
-  get 'books/show'
-
-  get 'books/new'
-
-  get 'books/edit'
-
-  get 'books/delete'
+  resources :books do
+    member do
+      get 'delete'
+    end
+  end
 
   get 'about/index'
 
