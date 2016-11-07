@@ -6,6 +6,8 @@ class AuthorsController < ApplicationController
   end
 
   def new
+    @page_title = 'Add new Author'
+    @author = Author.new
   end
 
   def edit
