@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   end
 
   def new
-    @page_title = 'Add book'
+    @page_title = 'Add new book'
     @book = Book.new
     @category = Category.new
     @author = Author.new
