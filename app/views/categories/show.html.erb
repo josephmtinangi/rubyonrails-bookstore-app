@@ -1,2 +1,23 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h2><%= @category.name %></h2>
+<div class="books-index">
+  <% @books.each_slice(4) do |bookSet| %>
+      <div class="row">
+        <% bookSet.each do |book| %>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+              <div class="thumbnail">
+                <%= book.coverpath ? image_tag(book.coverpath) : 'no cover image' %>
+                <div class="caption">
+                  <h3><%= truncate(book.title, length: 10) %></h3>
+                  <p>
+                    <%= truncate(book.excerpt, length: 28) %>
+                  </p>
+                  <p>
+                    <%= link_to('Read more', book_path(book), class: "btn btn-primary btn-block") %>
+                  </p>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
+</div>
