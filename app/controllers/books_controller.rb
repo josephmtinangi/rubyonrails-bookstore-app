@@ -13,6 +13,16 @@ class BooksController < ApplicationController
     @publisher = Publisher.new
   end
 
+  def create
+    @book = Book.new(book_params)
+    if @book.save
+      flash[:notice] = "Book added successfully."
+      redirect_to books_path
+    else
+      render 'new'
+    end
+  end
+
   def edit
   end
 
