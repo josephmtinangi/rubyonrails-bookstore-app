@@ -1,2 +1,8 @@
-<h1>Publishers#delete</h1>
-<p>Find me in app/views/publishers/delete.html.erb</p>
+<%= form_for(@publisher, method: :delete) do |f| %>
+    <p>Are you sure you want to delete this publisher permanently?</p>
+    <h2>
+      <%= f.object.name %>
+    </h2>
+
+    <%= f.submit 'Delete', class: 'btn btn-danger' %>
+<% end %>

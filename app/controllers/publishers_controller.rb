@@ -36,6 +36,14 @@ class PublishersController < ApplicationController
   end
 
   def delete
+    @publisher = Publisher.find(params[:id])
+  end
+
+  def destroy
+    @publisher = Publisher.find(params[:id])
+    @publisher.destroy
+    flash[:notice] = 'Publisher deleted successfully.'
+    redirect_to publishers_path
   end
 
   private
